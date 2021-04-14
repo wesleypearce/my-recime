@@ -19,7 +19,6 @@ const App = () => {
           </Route>
         </Switch>
       </BrowserRouter>
-      <h1>Hello!</h1>
     </div>
   );
 };

@@ -33777,8 +33777,61 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 var Login = function Login() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "This is the login"));
+  var _React$useState = React.useState(),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      email = _React$useState2[0],
+      setEmail = _React$useState2[1];
+
+  var _React$useState3 = React.useState(),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      password = _React$useState4[0],
+      setPassword = _React$useState4[1];
+
+  var handleChange = function handleChange(e) {
+    if (e.target.name == 'password') setPassword(e.target.value);
+    if (e.target.name == 'email') setEmail(e.target.value);
+  };
+
+  var handleClick = function handleClick(e) {
+    e.preventDefault();
+    console.log("User email: ".concat(email, ", user password: ").concat(password));
+  };
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Login!"), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "email"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    name: "email",
+    onChange: function onChange(e) {
+      return handleChange(e);
+    }
+  }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "password"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "password",
+    name: "password",
+    onChange: function onChange(e) {
+      return handleChange(e);
+    }
+  }))), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: function onClick(e) {
+      return handleClick(e);
+    }
+  }, "Login!")));
 };
 
 var _default = Login;
@@ -33797,8 +33850,61 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 var Signup = function Signup() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "This is the signup"));
+  var _React$useState = React.useState(),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      email = _React$useState2[0],
+      setEmail = _React$useState2[1];
+
+  var _React$useState3 = React.useState(),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      password = _React$useState4[0],
+      setPassword = _React$useState4[1];
+
+  var handleChange = function handleChange(e) {
+    if (e.target.name == 'password') setPassword(e.target.value);
+    if (e.target.name == 'email') setEmail(e.target.value);
+  };
+
+  var handleClick = function handleClick(e) {
+    e.preventDefault();
+    console.log("User email: ".concat(email, ", user password: ").concat(password));
+  };
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Sign Up!"), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "email"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    name: "email",
+    onChange: function onChange(e) {
+      return handleChange(e);
+    }
+  }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "password"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "password",
+    name: "password",
+    onChange: function onChange(e) {
+      return handleChange(e);
+    }
+  }))), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: function onClick(e) {
+      return handleClick(e);
+    }
+  }, "Sign Up!")));
 };
 
 var _default = Signup;
@@ -33829,7 +33935,7 @@ var App = function App() {
     path: "/login"
   }, /*#__PURE__*/React.createElement(_Login.default, null)), /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
     path: "/signup"
-  }, /*#__PURE__*/React.createElement(_Signup.default, null)))), /*#__PURE__*/React.createElement("h1", null, "Hello!"));
+  }, /*#__PURE__*/React.createElement(_Signup.default, null)))));
 };
 
 _reactDom.default.render( /*#__PURE__*/React.createElement(App, null), document.querySelector('#root'));
