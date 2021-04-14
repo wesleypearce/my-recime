@@ -3,11 +3,9 @@ import { useHistory } from 'react-router';
 
 const Navbar = () => {
   const history = useHistory();
-  console.log(`history is ${useHistory()}`);
 
-  const handleClick = (e) => {
-    history.push(`/${e.target.id}`);
-    console.log(e);
+  const handleClick = (id) => {
+    history.push(`/${id}`);
   };
 
   return (
@@ -57,18 +55,16 @@ const Navbar = () => {
           <div className="navbar-item">
             <div className="buttons">
               <button
-                onClick={(e) => handleClick(e)}
+                onClick={(e) => handleClick(e.currentTarget.id)}
                 className="button is-primary"
-                name="signup"
                 id="signup"
               >
                 <strong>Sign up</strong>
               </button>
               <button
-                onClick={(e) => handleClick(e)}
+                onClick={(e) => handleClick(e.currentTarget.id)}
                 className="button is-light"
                 id="login"
-                name="signup"
               >
                 Log in
               </button>

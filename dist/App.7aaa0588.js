@@ -33685,11 +33685,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var Navbar = function Navbar() {
   var history = (0, _reactRouter.useHistory)();
-  console.log("history is ".concat((0, _reactRouter.useHistory)()));
 
-  var handleClick = function handleClick(e) {
-    history.push("/".concat(e.target.id));
-    console.log(e);
+  var handleClick = function handleClick(id) {
+    history.push("/".concat(id));
   };
 
   return /*#__PURE__*/React.createElement("nav", {
@@ -33750,18 +33748,16 @@ var Navbar = function Navbar() {
     className: "buttons"
   }, /*#__PURE__*/React.createElement("button", {
     onClick: function onClick(e) {
-      return handleClick(e);
+      return handleClick(e.currentTarget.id);
     },
     className: "button is-primary",
-    name: "signup",
     id: "signup"
   }, /*#__PURE__*/React.createElement("strong", null, "Sign up")), /*#__PURE__*/React.createElement("button", {
     onClick: function onClick(e) {
-      return handleClick(e);
+      return handleClick(e.currentTarget.id);
     },
     className: "button is-light",
-    id: "login",
-    name: "signup"
+    id: "login"
   }, "Log in"))))));
 };
 
@@ -33829,7 +33825,11 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var App = function App() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/React.createElement(_Navbar.default, null), /*#__PURE__*/React.createElement(_Login.default, null), /*#__PURE__*/React.createElement(_Signup.default, null)), /*#__PURE__*/React.createElement("h1", null, "Hello!"));
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/React.createElement(_Navbar.default, null), /*#__PURE__*/React.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
+    path: "/login"
+  }, /*#__PURE__*/React.createElement(_Login.default, null)), /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
+    path: "/signup"
+  }, /*#__PURE__*/React.createElement(_Signup.default, null)))), /*#__PURE__*/React.createElement("h1", null, "Hello!"));
 };
 
 _reactDom.default.render( /*#__PURE__*/React.createElement(App, null), document.querySelector('#root'));
@@ -33861,7 +33861,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61742" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63649" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
