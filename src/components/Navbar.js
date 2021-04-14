@@ -1,11 +1,19 @@
 import * as React from 'react';
 import { useHistory } from 'react-router';
+import { auth } from '../../firebase';
 
 const Navbar = () => {
   const history = useHistory();
 
   const handleClick = (id) => {
-    history.push(`/${id}`);
+    if (id == 'logout') {
+      auth
+        .signOut()
+        .then(() => console.log('Logout success?'))
+        .catch((error) => console.log(error));
+    } else {
+      history.push(`/${id}`);
+    }
   };
 
   return (
@@ -67,6 +75,13 @@ const Navbar = () => {
                 id="login"
               >
                 Log in
+              </button>
+              <button
+                onClick={(e) => handleClick(e.currentTarget.id)}
+                className="button is-light"
+                id="logout"
+              >
+                Log out
               </button>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { auth } from '../../firebase';
 
 const Login = () => {
   const [email, setEmail] = React.useState();
@@ -11,7 +12,11 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(`User email: ${email}, user password: ${password}`);
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((cred) => console.log(cred))
+      .catch((error) => console.log(error));
   };
 
   return (
