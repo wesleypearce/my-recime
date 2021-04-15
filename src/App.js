@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
+import SearchRecipes from './components/SearchRecipes';
 import { auth } from '../firebase';
 
 const App = () => {
@@ -30,6 +31,9 @@ const App = () => {
           </Route>
           <Route path="/profile">
             <Profile user={user} />
+          </Route>
+          <Route path="/search">
+            <SearchRecipes />
           </Route>
         </Switch>
       </BrowserRouter>
