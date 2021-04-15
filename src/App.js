@@ -5,14 +5,22 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
+import { auth } from '../firebase';
 
 const App = () => {
-  const [user, setUser] = React.useState({});
+  const [user, setUser] = React.useState(null);
+
+  React.useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setUser(user);
+      console.log(user);
+    });
+  });
 
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Navbar user={user} setUser={setUser} />
         <Switch>
           <Route path="/login">
             <Login setUser={setUser} />

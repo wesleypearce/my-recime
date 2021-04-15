@@ -37,7 +37,7 @@ const Signup = ({ setUser }) => {
             />
           </label>
         </div>
-        <button type="button" onClick={(e) => handleClick(e)}>
+        <button type="submit" onClick={(e) => handleClick(e)}>
           Sign Up!
         </button>
       </form>

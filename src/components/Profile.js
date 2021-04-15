@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-const Profile = (user) => {
-  if (user == {}) console.log('No user logged in');
+const Profile = ({ user }) => {
+  if (user == null) console.log('No user logged in');
   else console.log(user);
   return (
     <div>

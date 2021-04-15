@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div>
       <h1>Login!</h1>
-      <form>
+      <form onSubmit={() => console.log('submitted')}>
         <div>
           <label htmlFor="email">
             <input type="text" name="email" onChange={(e) => handleChange(e)} />
@@ -37,7 +37,7 @@ const Login = () => {
             />
           </label>
         </div>
-        <button type="button" onClick={(e) => handleClick(e)}>
+        <button type="submit" onClick={(e) => handleClick(e)}>
           Login!
         </button>
       </form>
