@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { auth } from '../../firebase';
 
-const Signup = () => {
+const Signup = ({ setUser }) => {
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
 
@@ -15,7 +15,7 @@ const Signup = () => {
 
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then((cred) => console.log(cred))
+      .then((cred) => setUser(cred.user))
       .catch((error) => console.log(error));
   };
 
