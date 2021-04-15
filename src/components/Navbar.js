@@ -83,6 +83,13 @@ const Navbar = () => {
               >
                 Log out
               </button>
+              <button
+                onClick={(e) => handleClick(e.currentTarget.id)}
+                className="button is-light"
+                id="profile"
+              >
+                Profile
+              </button>
             </div>
           </div>
         </div>
