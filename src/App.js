@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import SearchRecipes from './components/SearchRecipes';
+import Dashboard from './components/Dashboard';
 import { auth } from '../firebase';
 
 const App = () => {
@@ -14,7 +15,6 @@ const App = () => {
   React.useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
-      console.log(user);
     });
   });
 
@@ -34,6 +34,9 @@ const App = () => {
           </Route>
           <Route path="/search">
             <SearchRecipes />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
       </BrowserRouter>

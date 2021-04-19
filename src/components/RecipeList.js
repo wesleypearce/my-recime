@@ -1,13 +1,16 @@
 import * as React from 'react';
 
-const RecipeList = (recipes) => {
+const RecipeList = ({ recipes }) => {
+  const renderRecipes = () => {
+    if (recipes != []) {
+      return recipes.map((recipe) => {
+        return <li key={recipe.id}>{recipe.title}</li>;
+      });
+    }
+  };
   return (
     <>
-      <ul>
-        {recipes.map((recipe) => {
-          return <div>{recipe.name}</div>;
-        })}
-      </ul>
+      <ul>{renderRecipes()}</ul>
     </>
   );
 };

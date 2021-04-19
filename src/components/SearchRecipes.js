@@ -3,9 +3,8 @@ import RecipeList from 'react';
 import axios from 'axios';
 import { apiKey } from '../../config';
 
-const SearchRecipes = () => {
+const SearchRecipes = ({ setRecipes }) => {
   const [query, setQuery] = React.useState('');
-  const [recipes, setRecipes] = React.useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,21 +14,12 @@ const SearchRecipes = () => {
       .catch((error) => console.log(error));
   };
 
-  const renderRecipes = () => {
-    if (recipes != []) {
-      return recipes.map((recipe) => {
-        return <li key={recipe.id}>{recipe.title}</li>;
-      });
-    }
-  };
-
   return (
     <>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
         <button type="submit">Search</button>
       </form>
-      {renderRecipes()}
     </>
   );
 };
