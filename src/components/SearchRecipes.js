@@ -1,5 +1,4 @@
 import * as React from 'react';
-import RecipeList from 'react';
 import axios from 'axios';
 import { apiKey } from '../../config';
 

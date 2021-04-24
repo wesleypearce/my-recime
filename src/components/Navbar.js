@@ -14,9 +14,15 @@ const Navbar = ({ user, setUser }) => {
   };
 
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <>
+      <div className="brand">Recime</div>
+      <div className="navbar">
+        <ul>
+          <li className="nav-link">Sign Up</li>
+          <li className="nav-link">Login</li>
+        </ul>
+      </div>
+    </>
   );
 };
 
