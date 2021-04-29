@@ -1,25 +1,18 @@
 import * as React from 'react';
-import { useHistory } from 'react-router';
-import { auth } from '../../firebase';
+import { Link } from 'react-router-dom';
 
-const Navbar = ({ user, setUser }) => {
-  const history = useHistory();
-
-  const handleClick = (id) => {
-    if (id == 'logout') {
-      auth.signOut().catch((error) => console.log(error));
-    } else {
-      history.push(`/${id}`);
-    }
-  };
-
+const Navbar = () => {
   return (
     <>
       <div className="brand">Recime</div>
       <div className="navbar">
         <ul>
-          <li className="nav-link">Sign Up</li>
-          <li className="nav-link">Login</li>
+          <li>
+            <Link to="/signup">Sign Up</Link>
+          </li>
+          <li>
+            <Link to="/login">Log In</Link>
+          </li>
         </ul>
       </div>
     </>

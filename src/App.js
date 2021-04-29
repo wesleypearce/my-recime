@@ -26,7 +26,6 @@ const App = () => {
 
           <div className="sidebar">
             <p>
-              <h1>Test Font</h1>
               My money's in that office, right? If she start giving me some
               bullshit about it ain't there, and we got to go someplace else and
               get it, I'm gonna shoot you in the head then and there. Then I'm
@@ -38,14 +37,10 @@ const App = () => {
             </p>
           </div>
           <div className="hero">
-            <p>
-              Now that we know who you are, I know who I am. I'm not a mistake!
-              It all makes sense! In a comic, you know how you can tell who the
-              arch-villain's going to be? He's the exact opposite of the hero.
-              And most times they're friends, like you and me! I should've known
-              way back when... You know why, David? Because of the kids. They
-              called me Mr Glass.
-            </p>
+            <img
+              src="meal-1200x800.jpg"
+              onError={(error) => console.log(error)}
+            />
           </div>
         </div>
         <Switch>
