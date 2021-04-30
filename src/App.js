@@ -15,7 +15,7 @@ const App = () => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
     });
-  });
+  }, []);
 
   return (
     <Router>

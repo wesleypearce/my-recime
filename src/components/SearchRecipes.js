@@ -16,7 +16,12 @@ const SearchRecipes = ({ setRecipes }) => {
   return (
     <>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" onChange={(e) => setQuery(e.target.value)} />
+        <label htmlFor="search">Search:</label>
+        <input
+          type="text"
+          name="search"
+          onChange={(e) => setQuery(e.target.value)}
+        />
         <button type="submit">Search</button>
       </form>
     </>
