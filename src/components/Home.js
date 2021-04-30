@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="wrapper">
+    <>
       <div className="sidebar">
         <p>
           My money's in that office, right? If she start giving me some bullshit
@@ -18,7 +17,7 @@ const Home = () => {
       <div className="hero">
         <img src="meal-1200x800.jpg" onError={(error) => console.log(error)} />
       </div>
-    </div>
+    </>
   );
 };
 

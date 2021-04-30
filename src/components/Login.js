@@ -20,22 +20,20 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h1>Login!</h1>
       <form onSubmit={() => console.log('submitted')}>
         <div>
-          <label htmlFor="email">
-            <input type="text" name="email" onChange={(e) => handleChange(e)} />
-          </label>
+          <label htmlFor="email">Email:</label>
+          <input type="text" name="email" onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label htmlFor="password">
-            <input
-              type="password"
-              name="password"
-              onChange={(e) => handleChange(e)}
-            />
-          </label>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            onChange={(e) => handleChange(e)}
+          />
         </div>
         <button type="submit" onClick={(e) => handleClick(e)}>
           Login!

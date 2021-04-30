@@ -19,21 +19,23 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/dashboard">
-          <Dashboard user={user} />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <div className="wrapper">
+        <Navbar />
+        <Switch>
+          <Route path="/dashboard">
+            <Dashboard user={user} />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 };
