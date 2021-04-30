@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { auth } from '../../firebase';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
+  const history = useHistory();
 
   const handleChange = (e) => {
     if (e.target.name == 'password') setPassword(e.target.value);
@@ -15,7 +17,9 @@ const Login = () => {
 
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((cred) => console.log(cred))
+      .then(() => {
+        history.push('/dashboard');
+      })
       .catch((error) => console.log(error));
   };
 
