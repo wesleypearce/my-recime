@@ -8,22 +8,25 @@ const RecipeList = ({ recipes, setSelectedRecipeID }) => {
     if (recipes != []) {
       return recipes.map((recipe) => {
         return (
-          <div
-            className="recipe-card"
-            onClick={() => viewRecipe(recipe)}
-            key={recipe.id}
-          >
-            {recipe.title}
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-4by3">
+                <img src={recipe.image} alt={recipe.title} />
+              </figure>
+            </div>
+            <div className="card-content">
+              <div className="media">
+                <div className="media-content">
+                  <p className="title is-4">{recipe.title}</p>
+                </div>
+              </div>
+            </div>
           </div>
         );
       });
     }
   };
-  return (
-    <div className="column">
-      <ul>{renderRecipes()}</ul>
-    </div>
-  );
+  return <div className="is-flex is-flex-wrap-wrap">{renderRecipes()}</div>;
 };
 
 export default RecipeList;

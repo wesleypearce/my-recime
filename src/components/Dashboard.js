@@ -13,7 +13,7 @@ const Dashboard = ({ user }) => {
   return (
     <div className="columns">
       <SearchRecipes setRecipes={setRecipes} />
-      {/* <RecipeList recipes={recipes} setSelectedRecipeID={setSelectedRecipeID} /> */}
+      <RecipeList recipes={recipes} setSelectedRecipeID={setSelectedRecipeID} />
       {/* {selectedRecipeID != null && (
         <Recipe selectedRecipeID={selectedRecipeID} />
       )} */}
