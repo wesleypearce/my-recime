@@ -10,9 +10,7 @@ const Signup = ({ setUser }) => {
     if (e.target.name == 'email') setEmail(e.target.value);
   };
 
-  const handleClick = (e) => {
-    e.preventDefault();
-
+  const submit = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((cred) => setUser(cred.user))
@@ -20,26 +18,42 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div className="form-container">
-      <h1>Sign Up!</h1>
-      <form>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="text" name="email" onChange={(e) => handleChange(e)} />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+    <>
+      <h1 className="is-size-2">Sign Up!</h1>
+      <div className="field">
+        <label htmlFor="email" className="label">
+          Email
+        </label>
+        <div className="control">
           <input
-            type="password"
-            name="password"
             onChange={(e) => handleChange(e)}
+            type="text"
+            name="email"
+            className="input"
           />
         </div>
-        <button type="submit" onClick={(e) => handleClick(e)}>
-          Sign Up!
-        </button>
-      </form>
-    </div>
+      </div>
+      <div className="field">
+        <label htmlFor="password" className="label">
+          Password
+        </label>
+        <div className="control">
+          <input
+            onChange={(e) => handleChange(e)}
+            type="password"
+            name="password"
+            className="input"
+          />
+        </div>
+      </div>
+      <div className="field">
+        <div className="control">
+          <button onClick={submit} className="button is-link">
+            Login
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

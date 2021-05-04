@@ -1,21 +1,31 @@
 import * as React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <>
-      <div className="navbar">
-        <div className="brand">Recime</div>
-        <ul>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+    <nav className="navbar mt-2" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <a href="/" className="navbar-item">
+          Recime
+        </a>
       </div>
-    </>
+      <div className="navbar-menu">
+        <div className="navbar-start">
+          <Link to="/" className="navbar-item">
+            Home
+          </Link>
+        </div>
+
+        <div className="navbar-end">
+          <Link to="/signup" className="navbar-item button">
+            Sign Up!
+          </Link>
+          <Link to="/login" className="navbar-item button">
+            Log In
+          </Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 

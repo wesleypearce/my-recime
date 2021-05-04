@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --red: hsl(1, 93%, 52%);
   --teal: hsl(185, 84%, 38%);
   --sky-blue: hsl(201, 87%, 85%);
@@ -31,9 +31,28 @@ input {
   font-size: 1em;
 }
 
+input[type=checkbox] {
+  
+}
+
+.search {
+  width: auto;
+  height: auto;
+  background-color: var(--tan);
+  padding: 10px 50px 10px 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.search-menu {
+  align-self: flex-start;
+}
+
 label {
   font-weight: bold;
   font-size: 1em;
+  display: block;
 }
 
 button {
@@ -41,6 +60,7 @@ button {
   background-color: var(--teal);
   border-radius: 5px;
   padding: 10px 2em;
+  height: 50px;
   font-weight: bold;
   color: var(--white);
   font-size: large;
@@ -55,8 +75,28 @@ button:hover {
 
 .dashboard {
   grid-row: 2/3;
-  grid-column: 3/6;
+  grid-column: 1/7;
+  width: 100%;
   justify-self: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.recipe-card {
+  background-color: var(--tan);
+  width: auto;
+  height: 200px;
+  margin: 1em;
+}
+
+.recipe-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.recipe-card:hover {
+  cursor: pointer;
 }
 
 .recipe {
@@ -67,8 +107,8 @@ button:hover {
 .wrapper {
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, .5fr);
+  grid-template-rows: repeat(6, 100px);
 }
 
 .brand,
@@ -121,4 +161,8 @@ button:hover {
 
 .form-container > h1 {
   text-align: center;
+} */
+
+.add-cursor {
+  cursor: pointer;
 }

@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="wrapper">
+      <div className="container">
         <Navbar />
         <Switch>
           <Route path="/dashboard">
