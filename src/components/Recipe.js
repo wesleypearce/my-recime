@@ -1,7 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
 import { apiKey } from '../../config';
-import { recipe } from '../../recipes';
 
 const Recipe = ({ selectedRecipeID }) => {
   const [recipeInfo, setRecipeInfo] = React.useState(recipe);

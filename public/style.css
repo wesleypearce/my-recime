@@ -166,3 +166,7 @@ button:hover {
 .add-cursor {
   cursor: pointer;
 }
+
+.card-sized {
+  width: 300px;
+}

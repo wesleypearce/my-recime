@@ -8,8 +8,6 @@ const Dashboard = ({ user }) => {
   const [recipes, setRecipes] = React.useState(testRecipes);
   const [selectedRecipeID, setSelectedRecipeID] = React.useState(null);
 
-  React.useEffect(() => console.log(testRecipes), []);
-
   return (
     <div className="columns">
       <SearchRecipes setRecipes={setRecipes} />

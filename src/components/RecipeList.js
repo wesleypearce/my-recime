@@ -8,7 +8,7 @@ const RecipeList = ({ recipes, setSelectedRecipeID }) => {
     if (recipes != []) {
       return recipes.map((recipe) => {
         return (
-          <div className="card">
+          <div key={recipe.id} className="card card-sized is-clickable m-1">
             <div className="card-image">
               <figure className="image is-4by3">
                 <img src={recipe.image} alt={recipe.title} />
