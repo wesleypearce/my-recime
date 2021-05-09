@@ -170,3 +170,7 @@ button:hover {
 .card-sized {
   width: 300px;
 }
+
+.recipe {
+  width: 600px;
+}

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchRecipes from '../components/SearchRecipes';
 import RecipeList from '../components/RecipeList';
 import Recipe from '../components/Recipe';
@@ -11,7 +12,19 @@ const Dashboard = ({ user }) => {
   return (
     <div className="columns">
       <SearchRecipes setRecipes={setRecipes} />
-      <RecipeList recipes={recipes} setSelectedRecipeID={setSelectedRecipeID} />
+      <Router>
+        <Switch>
+          <Route path="/dashboard">
+            <RecipeList
+              recipes={recipes}
+              setSelectedRecipeID={setSelectedRecipeID}
+            />
+          </Route>
+          <Route path="/recipe">
+            <Recipe />
+          </Route>
+        </Switch>
+      </Router>
       {/* {selectedRecipeID != null && (
         <Recipe selectedRecipeID={selectedRecipeID} />
       )} */}

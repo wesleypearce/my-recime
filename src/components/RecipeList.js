@@ -1,14 +1,21 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 
-const RecipeList = ({ recipes, setSelectedRecipeID }) => {
+const RecipeList = ({ recipes }) => {
+  const history = useHistory();
   const viewRecipe = (recipe) => {
-    setSelectedRecipeID(recipe.id);
+    // setSelectedRecipeID(recipe.id);
+    history.push('/recipe', { recipe });
   };
   const renderRecipes = () => {
     if (recipes != []) {
       return recipes.map((recipe) => {
         return (
-          <div key={recipe.id} className="card card-sized is-clickable m-1">
+          <div
+            onClick={() => viewRecipe(recipe)}
+            key={recipe.id}
+            className="card card-sized is-clickable m-1"
+          >
             <div className="card-image">
               <figure className="image is-4by3">
                 <img src={recipe.image} alt={recipe.title} />

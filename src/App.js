@@ -8,6 +8,9 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import { auth } from '../firebase';
 
+// should be removed
+import Recipe from './components/Recipe';
+
 const App = () => {
   const [user, setUser] = React.useState(null);
 
@@ -30,6 +33,10 @@ const App = () => {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          // should be removed
+          <Route path="/recipe">
+            <Recipe />
           </Route>
           <Route path="/">
             <Home />

@@ -1,30 +1,53 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
+import { recipe } from '../../recipe';
 import axios from 'axios';
 import { apiKey } from '../../config';
 
-const Recipe = ({ selectedRecipeID }) => {
-  const [recipeInfo, setRecipeInfo] = React.useState(recipe);
+const Recipe = () => {
+  const history = useHistory();
+  const ingredients = recipe.extendedIngredients;
 
-  React.useEffect(() => console.log({ recipe }));
+  // const recipe = history.location.state.recipe;
+  // const ingredients = recipe.extendedIngredients
 
-  // React.useEffect(() => {
-  //   if (selectedRecipeID != null) {
-  //     console.log(recipe);
-  // test recipe to save db hits
-  // axios
-  //   .get(
-  //     `https://api.spoonacular.com/recipes/${selectedRecipeID}/information?apiKey=${apiKey}&includeNutrition=true`,
-  //   )
-  //   .then(({ data }) => setRecipeInfo(data))
-  //   .catch((error) => console.log(error));
-  // }
-  // }, []);
+  const navigateBack = () => {
+    history.push('/dashboard');
+  };
 
-  // if (selectedRecipeID == null) return <></>;
-  // else {
+  const renderIngredients = () => {
+    return ingredients.map((ingredient) => {
+      return (
+        <li className="is-capitalized" key={ingredient.id}>
+          {ingredient.original}
+        </li>
+      );
+    });
+  };
+
+  React.useEffect(() => {
+    // get recipe details
+    console.log(recipe);
+  });
+
   return (
-    <div className="recipe">
-      <h1>{recipeInfo.title}</h1>
+    <div className="column is-three-quarters is-flex is-justify-content-center">
+      <div className="recipe is-flex is-flex-direction-column is-flex-wrap-nowrap">
+        <h1 className="is-size-1">{recipe.title}</h1>
+        <figure className="image is-4by3 m-5">
+          <img src={recipe.image} alt={recipe.title} />
+        </figure>
+        <h3 className="is-size-3 is-align-self-center">Instructions</h3>
+        <p className="summarySection m-5">{recipe.instructions}</p>
+        <h3 className="is-size-3 is-align-self-center">Ingredients</h3>
+
+        <ul className="m-5">{renderIngredients()}</ul>
+        <a href={recipe.sourceUrl}>Link to Recipe</a>
+
+        <button onClick={navigateBack} className="button">
+          Go Back
+        </button>
+      </div>
     </div>
   );
   // }
