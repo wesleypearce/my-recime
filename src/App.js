@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import Cookbook from './components/Cookbook';
 import { auth } from '../firebase';
 
 // should be removed
@@ -37,6 +38,9 @@ const App = () => {
           // should be removed
           <Route path="/recipe">
             <Recipe />
+          </Route>
+          <Route path="/cookbook">
+            <Cookbook />
           </Route>
           <Route path="/">
             <Home />

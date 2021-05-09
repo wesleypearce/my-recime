@@ -25,6 +25,12 @@ const Recipe = () => {
     });
   };
 
+  const addToCookbook = () => {
+    //TODO: Need to implement this with auth routes and adding to real db
+
+    console.log(recipe.id);
+  };
+
   React.useEffect(() => {
     // get recipe details
     console.log(recipe);
@@ -43,7 +49,9 @@ const Recipe = () => {
 
         <ul className="m-5">{renderIngredients()}</ul>
         <a href={recipe.sourceUrl}>Link to Recipe</a>
-
+        <button onClick={addToCookbook} className="button">
+          Add to Cookbook
+        </button>
         <button onClick={navigateBack} className="button">
           Go Back
         </button>
