@@ -1,5 +1,17 @@
 @charset "utf-8";
+$primary: hsl(211, 87%, 25%);
+$link: hsl(201, 87, 85);
+$info: hsl(48, 67, 79);
+$danger: hsl(1, 93, 52);
+$text: hsl(240, 90%, 4%);
+$background: hsl(40, 33, 96);
+
+$family-sans-serif: 'Montserrat', sans-serif;
+$family-primary: $family-sans-serif;
+$family-secondary: 'PT Serif', serif;
+
 @import '../node_modules/bulma/bulma.sass';
+
 
 .card-sized {
   width: 300px;
@@ -8,3 +20,5 @@
 .recipe {
   width: 600px;
 }
+
+
