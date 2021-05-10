@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <div className="columns mt-4">
         <div className="column">
-          <p>
+          <p className="is-family-secondary is-size-5">
             My money's in that office, right? If she start giving me some
             bullshit about it ain't there, and we got to go someplace else and
             get it, I'm gonna shoot you in the head then and there. Then I'm
@@ -21,7 +21,7 @@ const Home = () => {
           <figure className="image is-3by2">
             <img src={image} />
           </figure>
-          <p>
+          <p className="is-family-secondary">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
             architecto sint. Ipsa error ad nihil aliquid eius voluptas maiores
             sequi, sed quos perferendis! Sint commodi dicta harum est doloremque

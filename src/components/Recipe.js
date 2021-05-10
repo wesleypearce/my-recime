@@ -18,7 +18,7 @@ const Recipe = () => {
   const renderIngredients = () => {
     return ingredients.map((ingredient) => {
       return (
-        <li className="is-capitalized" key={ingredient.id}>
+        <li className="is-capitalized is-family-secondary" key={ingredient.id}>
           {ingredient.original}
         </li>
       );

@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar mt-2" role="navigation" aria-label="main navigation">
+    <nav
+      className="navbar mt-2 p-3 is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="navbar-brand">
         <a href="/" className="navbar-item">
           Recime
@@ -20,13 +24,13 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <Link to="/signup" className="navbar-item button">
+          <Link to="/signup" className="navbar-item">
             Sign Up!
           </Link>
-          <Link to="/login" className="navbar-item button">
+          <Link to="/login" className="navbar-item">
             Log In
           </Link>
-          <Link to="/cookbook" className="navbar-item button">
+          <Link to="/cookbook" className="navbar-item">
             Cookbook
           </Link>
         </div>
