@@ -18,8 +18,8 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <>
-      <h1 className="is-size-2">Sign Up!</h1>
+    <div className="my-form">
+      <h1 className="is-size-2 mt-4">Sign Up!</h1>
       <div className="field">
         <label htmlFor="email" className="label">
           Email
@@ -48,12 +48,12 @@ const Signup = ({ setUser }) => {
       </div>
       <div className="field">
         <div className="control">
-          <button onClick={submit} className="button is-link">
+          <button onClick={submit} className="button is-primary">
             Login
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -21,4 +21,15 @@ $family-secondary: 'PT Serif', serif;
   width: 600px;
 }
 
+.my-form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .my-form {
+    width: 300px;
+  }
+}
+
 

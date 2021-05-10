@@ -10,7 +10,7 @@ const Dashboard = ({ user }) => {
   const [selectedRecipeID, setSelectedRecipeID] = React.useState(null);
 
   return (
-    <div className="columns">
+    <div className="columns mt-4">
       <SearchRecipes setRecipes={setRecipes} />
       <Router>
         <Switch>
