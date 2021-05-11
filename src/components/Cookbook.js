@@ -9,7 +9,8 @@ const Cookbook = () => {
     return recipes.map((recipe) => {
       let ingredients = {};
       return recipe.extendedIngredients.map((ingredient) => {
-        let { name, measures } = ingredient;
+        let { name } = ingredient;
+        let { amount, unitLong } = ingredient.measures.us;
 
         // if this ingredient has not been added to combined ingredients add it to combined ingredients
         // else check the measurements to see if they match
@@ -17,17 +18,11 @@ const Cookbook = () => {
         // if they do not, make a string that explains what measurements are needed
 
         if (!ingredients[name]) {
-          ingredients[name] = measures;
-          ingredients[
-            name
-          ].ingredientString = `${ingredient.amount} ${ingredient.measures.us.unitLong} ${ingredient.name}`;
-        } else if (
-          ingredients[name].measures.us.unitShort ===
-          ingredient.measures.us.unitShort
-        ) {
+          ingredients[name] = ingredient.measures;
+          ingredients[name].ingredientString = `${amount} ${unitLong} ${name}`;
+        } else if (ingredients[name].measures.us.unitLong === unitLong) {
           ingredients[name].measures.us.amount =
-            ingredient.measures.us.amount +
-            ingredients[name].measures.us.amount;
+            amount + ingredients[name].measures.us.amount;
         } else {
           ingredients[
             name
