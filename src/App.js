@@ -6,7 +6,7 @@ import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import Cookbook from './components/Cookbook';
+import ShoppingList from './components/ShoppingList';
 import { auth } from '../firebase';
 
 // should be removed
@@ -39,8 +39,8 @@ const App = () => {
           <Route path="/recipe">
             <Recipe />
           </Route>
-          <Route path="/cookbook">
-            <Cookbook />
+          <Route path="/shoppinglist">
+            <ShoppingList />
           </Route>
           <Route path="/">
             <Home />

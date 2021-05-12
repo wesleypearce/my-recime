@@ -2,7 +2,7 @@ import * as React from 'react';
 import { recipe } from '../../recipe';
 import { recipe1 } from '../../recipe1';
 
-const Cookbook = () => {
+const ShoppingList = () => {
   const [recipes, setRecipes] = React.useState([recipe, recipe1]);
   let sortedIngredients = [];
 
@@ -66,4 +66,4 @@ const Cookbook = () => {
   );
 };
 
-export default Cookbook;
+export default ShoppingList;
