@@ -7768,6 +7768,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   width: 500px;
   margin: 0 auto; }
 
+.cookbook {
+  width: 800px; }
+
+.aisle {
+  text-align: center; }
+
 @media screen and (max-width: 768px) {
   .my-form {
     width: 300px; } }
