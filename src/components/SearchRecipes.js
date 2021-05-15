@@ -16,7 +16,7 @@ const SearchRecipes = ({ setRecipes }) => {
   };
 
   return (
-    <div className="column">
+    <div className="column is-one-fifth">
       <div className="field">
         <label htmlFor="search">Search</label>
         <div className="control">
