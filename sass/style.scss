@@ -13,9 +13,13 @@ $family-secondary: 'PT Serif', serif;
 
 @import '../node_modules/bulma/bulma.sass';
 
-
 .card-sized {
   width: 300px;
+}
+
+.cookbook-recipe:hover {
+  background-color: $danger;
+  color: $background;
 }
 
 .recipe {
@@ -48,5 +52,3 @@ $family-secondary: 'PT Serif', serif;
     width: 300px;
   }
 }
-
-

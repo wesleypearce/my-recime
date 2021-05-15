@@ -6,7 +6,7 @@ import { testRecipes as recipes } from '../../recipes';
 const Cookbook = () => {
   const [selectedRecipes, setSelectedRecipes] = React.useState([]);
 
-  const handleClick = (recipe) => {
+  const selectRecipe = (recipe) => {
     const recipeCard = document.getElementById(`${recipe.id}`);
     const recipeP = document.getElementById(`${recipe.title}`);
 
@@ -32,7 +32,7 @@ const Cookbook = () => {
       return recipes.map((recipe) => {
         return (
           <div
-            onClick={() => handleClick(recipe)}
+            onClick={() => selectRecipe(recipe)}
             key={recipe.id}
             id={recipe.id}
             className="card card-sized is-clickable m-1"
@@ -59,8 +59,11 @@ const Cookbook = () => {
 
   return (
     <div className="columns mt-4">
-      <div className="column is-one-fifth">
-        <Sidebar selectedRecipes={selectedRecipes} />
+      <div className="column mr-4 is-one-fifth">
+        <Sidebar
+          selectedRecipes={selectedRecipes}
+          selectRecipe={selectRecipe}
+        />
       </div>
       <div className="column">
         <div className="is-flex is-flex-wrap-wrap">{renderRecipes()}</div>

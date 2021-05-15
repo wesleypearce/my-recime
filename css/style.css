@@ -7761,6 +7761,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .card-sized {
   width: 300px; }
 
+.cookbook-recipe:hover {
+  background-color: #f61713;
+  color: #f8f6f1; }
+
 .recipe {
   width: 600px; }
 
