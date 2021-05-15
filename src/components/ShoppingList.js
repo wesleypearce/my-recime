@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { recipe } from '../../recipe';
 import { recipe1 } from '../../recipe1';
+import { useHistory } from 'react-router-dom';
 
 const ShoppingList = () => {
   const [recipes, setRecipes] = React.useState([recipe, recipe1]);
+  const history = useHistory();
+  console.log(history.location.state.beer);
   let sortedIngredients = [];
 
   const sortIngredientsByAisle = (ingredients) => {
