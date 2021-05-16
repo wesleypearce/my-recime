@@ -58,10 +58,14 @@ const ShoppingList = () => {
 
   return (
     <div>
-      <h1>Shopping List</h1>
+      <h1 className="is-size-1 mb-4 mt-4">Shopping List</h1>
       <div className="columns cookbook">
-        <div className="column">{renderIngredientList()}</div>
+        <div className="column">
+          <h2 className="is-size-3 mt-2 mb-2">Ingredient</h2>
+          {renderIngredientList()}
+        </div>
         <div className="column aisle has-text-left">
+          <h2 className="is-size-3 mt-2 mb-2">Aisle</h2>
           {renderAisleList(sortedIngredients)}
         </div>
       </div>
