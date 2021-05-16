@@ -1,5 +1,4 @@
 import * as React from 'react';
-import RecipeList from '../components/RecipeList';
 import Sidebar from '../components/Sidebar';
 import { testRecipes as recipes } from '../../recipes';
 
@@ -45,7 +44,7 @@ const Cookbook = () => {
             <div className="card-content">
               <div className="media">
                 <div className="media-content">
-                  <p id={recipe.title} className="title is-4">
+                  <p id={recipe.title} className="title is-5 has-text-centered">
                     {recipe.title}
                   </p>
                 </div>
@@ -58,7 +57,7 @@ const Cookbook = () => {
   };
 
   return (
-    <div className="columns mt-4">
+    <div className="columns has-text-centered-mobile mt-4">
       <div className="column mr-4 is-one-fifth">
         <Sidebar
           selectedRecipes={selectedRecipes}
@@ -66,7 +65,9 @@ const Cookbook = () => {
         />
       </div>
       <div className="column">
-        <div className="is-flex is-flex-wrap-wrap">{renderRecipes()}</div>
+        <div className="is-flex is-flex-wrap-wrap is-justify-content-center">
+          {renderRecipes()}
+        </div>
       </div>
     </div>
   );

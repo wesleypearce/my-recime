@@ -24,7 +24,7 @@ const RecipeList = ({ recipes }) => {
             <div className="card-content">
               <div className="media">
                 <div className="media-content">
-                  <p className="title is-4">{recipe.title}</p>
+                  <p className="title is-5 has-text-centered">{recipe.title}</p>
                 </div>
               </div>
             </div>

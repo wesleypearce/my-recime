@@ -1,32 +1,34 @@
 import * as React from 'react';
 import image from '../../public/meal-1200x800.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <>
       <div className="columns mt-4">
         <div className="column">
-          <p className="is-family-secondary is-size-5">
-            My money's in that office, right? If she start giving me some
-            bullshit about it ain't there, and we got to go someplace else and
-            get it, I'm gonna shoot you in the head then and there. Then I'm
-            gonna shoot that bitch in the kneecaps, find out where my goddamn
-            money is. She gonna tell me too. Hey, look at me when I'm talking to
-            you, motherfucker. You listen: we go in there, and that nigga
-            Winston or anybody else is in there, you the first motherfucker to
-            get shot. You understand?
+          <h1 className="is-size-1 m-1">Welcome!</h1>
+          <p className="is-family-secondary is-size-4 m-2">
+            If you're looking for an easier way to meal plan, you have found it!
           </p>
+          <p className="is-family-secondary is-size-4 m-2">
+            Search for recipes, add them to your meal plan, and your shopping
+            list is magically generated!
+          </p>
+          <p className="is-family-secondary is-size-4 m-2">
+            Sign in to save your favorite recipes or meal plans!
+          </p>
+          <Link to="/signup" className="button is-primary m-2">
+            Sign In
+          </Link>
+          <Link to="/login" className="button is-primary m-2">
+            Log In
+          </Link>
         </div>
         <div className="column">
           <figure className="image is-3by2">
             <img src={image} />
           </figure>
-          <p className="is-family-secondary">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-            architecto sint. Ipsa error ad nihil aliquid eius voluptas maiores
-            sequi, sed quos perferendis! Sint commodi dicta harum est doloremque
-            amet?
-          </p>
         </div>
       </div>
     </>

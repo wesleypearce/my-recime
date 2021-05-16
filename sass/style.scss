@@ -11,6 +11,10 @@ $family-sans-serif: 'Montserrat', sans-serif;
 $family-primary: $family-sans-serif;
 $family-secondary: 'PT Serif', serif;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @import '../node_modules/bulma/bulma.sass';
 
 .card-sized {
@@ -51,4 +55,7 @@ $family-secondary: 'PT Serif', serif;
   .my-form {
     width: 300px;
   }
+}
+.p {
+  overflow: hidden;
 }

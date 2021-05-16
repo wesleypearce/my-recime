@@ -22,14 +22,14 @@ const Sidebar = ({ selectedRecipes, selectRecipe }) => {
     });
   };
   return (
-    <>
+    <div className="m-2">
       <h3 className="is-size-2">Cookbook</h3>
       <p className="has-text-weight-bold">Add recipes to your shopping list!</p>
       <ul className="mt-4">{renderSelectedRecipes()}</ul>
       <button className="button is-success" onClick={renderShoppingList}>
         Get Shopping List
       </button>
-    </>
+    </div>
   );
 };
 
