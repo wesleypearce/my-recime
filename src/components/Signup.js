@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { auth } from '../../firebase';
+import { useHistory } from 'react-router-dom';
 
 const Signup = ({ setUser }) => {
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
+  const history = useHistory();
+
+  console.log(setUser);
 
   const handleChange = (e) => {
     if (e.target.name == 'password') setPassword(e.target.value);
@@ -13,7 +17,10 @@ const Signup = ({ setUser }) => {
   const submit = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then((cred) => setUser(cred.user))
+      .then((cred) => {
+        setUser(cred.user);
+        history.pushState('/dashboard');
+      })
       .catch((error) => console.log(error));
   };
 

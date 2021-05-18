@@ -34,7 +34,7 @@ const App = () => {
             <Login />
           </Route>
           <Route path="/signup">
-            <Signup />
+            <Signup setUser={setUser} />
           </Route>
           // should be removed
           <Route path="/recipe">
