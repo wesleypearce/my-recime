@@ -2,6 +2,8 @@ import * as React from 'react';
 import axios from 'axios';
 import { apiKey } from '../../config';
 
+//TODO: Search should fire off from hitting enter in the search box
+
 const SearchRecipes = ({ setRecipes }) => {
   const [query, setQuery] = React.useState('');
 
@@ -10,7 +12,9 @@ const SearchRecipes = ({ setRecipes }) => {
       .get(
         `https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${apiKey}`,
       )
-      .then(({ data }) => setRecipes(data.results))
+      .then(({ data }) => {
+        setRecipes(data.results);
+      })
       .catch((error) => console.log(error));
   };
 

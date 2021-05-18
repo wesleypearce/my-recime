@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchRecipes from '../components/SearchRecipes';
 import RecipeList from '../components/RecipeList';
 import Recipe from '../components/Recipe';
-import { testRecipes } from '../../recipes';
 
 const Dashboard = ({ user }) => {
-  const [recipes, setRecipes] = React.useState(testRecipes);
+  const [recipes, setRecipes] = React.useState([]);
   const [selectedRecipeID, setSelectedRecipeID] = React.useState(null);
 
   return (
