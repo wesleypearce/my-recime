@@ -2,10 +2,11 @@ import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { apiKey } from '../../config';
+import { auth, addRecipeToUserCookbook } from '../../firebase';
 
 //TODO: Dashboard does not work from this component?
 
-const Recipe = () => {
+const Recipe = (user) => {
   const history = useHistory();
   const initialState = {
     extendedIngredients: [],
@@ -56,7 +57,7 @@ const Recipe = () => {
   const addToCookbook = () => {
     //TODO: Need to implement this with auth routes and adding to real db
 
-    console.log(recipe.id);
+    addRecipeToUserCookbook(auth.currentUser.uid, recipe);
   };
 
   return (

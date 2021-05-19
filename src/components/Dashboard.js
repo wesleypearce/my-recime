@@ -3,10 +3,21 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchRecipes from '../components/SearchRecipes';
 import RecipeList from '../components/RecipeList';
 import Recipe from '../components/Recipe';
+import { apiKey } from '../../config';
+import axios from 'axios';
 
 const Dashboard = ({ user }) => {
   const [recipes, setRecipes] = React.useState([]);
   const [selectedRecipeID, setSelectedRecipeID] = React.useState(null);
+
+  React.useEffect(() => {
+    axios
+      .get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`)
+      .then(({ data }) => {
+        setRecipes(data.results);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div className="columns mt-4">
@@ -20,7 +31,7 @@ const Dashboard = ({ user }) => {
             />
           </Route>
           <Route path="/recipe">
-            <Recipe />
+            <Recipe user={user} />
           </Route>
         </Switch>
       </Router>

@@ -19,6 +19,18 @@ firebase.initializeApp(firebaseConfig);
 
 const firestore = firebase.firestore();
 
+export const addRecipeToUserCookbook = async (uid, recipe) => {
+  const userRef = firestore.collection('users').doc(uid);
+  const { cookbook } = await getUserDocument(uid);
+
+  return userRef
+    .update({
+      cookbook: [recipe, ...cookbook],
+    })
+    .then(() => console.log('Document successfully updated!'))
+    .catch((error) => console.error(error));
+};
+
 export const createUserProfileDocument = async ({ user }) => {
   if (!user) return null;
 
@@ -32,13 +44,12 @@ export const createUserProfileDocument = async ({ user }) => {
       await userRef.set({
         email,
         createdAt,
+        cookbook: [],
       });
     } catch (error) {
       console.error(error);
     }
   }
-
-  return getUserDocument(user.uid);
 };
 
 export const getUserDocument = async (uid) => {

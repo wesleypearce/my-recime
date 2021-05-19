@@ -7,8 +7,6 @@ const Signup = ({ setUser }) => {
   const [password, setPassword] = React.useState();
   const history = useHistory();
 
-  console.log(setUser);
-
   const handleChange = (e) => {
     if (e.target.name == 'password') setPassword(e.target.value);
     if (e.target.name == 'email') setEmail(e.target.value);
@@ -17,19 +15,12 @@ const Signup = ({ setUser }) => {
   const submit = async () => {
     try {
       const user = await auth.createUserWithEmailAndPassword(email, password);
-
       setUser(user);
       createUserProfileDocument(user);
+      history.push('/dashboard');
     } catch (error) {
       console.error(error);
     }
-    // auth
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then((cred) => {
-    //     setUser(cred.user);
-    //     history.pushState('/dashboard');
-    //   })
-    //   .catch((error) => console.log(error));
   };
 
   return (
