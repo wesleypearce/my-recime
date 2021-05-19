@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { auth } from '../../firebase';
+import { auth, createUserProfileDocument } from '../../firebase';
 import { useHistory } from 'react-router-dom';
 
 const Signup = ({ setUser }) => {
@@ -14,14 +14,22 @@ const Signup = ({ setUser }) => {
     if (e.target.name == 'email') setEmail(e.target.value);
   };
 
-  const submit = () => {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((cred) => {
-        setUser(cred.user);
-        history.pushState('/dashboard');
-      })
-      .catch((error) => console.log(error));
+  const submit = async () => {
+    try {
+      const user = await auth.createUserWithEmailAndPassword(email, password);
+
+      setUser(user);
+      createUserProfileDocument(user);
+    } catch (error) {
+      console.error(error);
+    }
+    // auth
+    //   .createUserWithEmailAndPassword(email, password)
+    //   .then((cred) => {
+    //     setUser(cred.user);
+    //     history.pushState('/dashboard');
+    //   })
+    //   .catch((error) => console.log(error));
   };
 
   return (
