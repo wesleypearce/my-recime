@@ -56,7 +56,7 @@ const Recipe = (user) => {
 
   const addToCookbook = () => {
     //TODO: Need to implement this with auth routes and adding to real db
-
+    console.log(auth.currentUser.uid);
     addRecipeToUserCookbook(auth.currentUser.uid, recipe);
   };
 
